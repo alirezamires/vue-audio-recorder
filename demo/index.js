@@ -1,14 +1,11 @@
-import Vue from 'vue'
-import axios from 'axios'
-import app from './app'
+import { createApp}  from "vue";
 
-import AudioRecorder from '@/index'
+import App from "./App.vue";
 
-Vue.prototype.$http = axios
+let app = createApp({
+    components: { App },
+    template: "<App/>"
+});
 
-Vue.use(AudioRecorder)
 
-new Vue({
-  el: '#app',
-  render: h => h(app)
-})
+app.mount("#app");
